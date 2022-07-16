@@ -26,9 +26,9 @@ class _AuthFormState extends State<AuthForm> {
     }
     _formKey.currentState!.save();
     _submitForm(
-      _email,
-      _password,
-      _username,
+      _email.trim().toLowerCase(),
+      _password.trim(),
+      _username.trim().toLowerCase(),
     );
   }
 

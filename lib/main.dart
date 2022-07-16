@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme(
           brightness: Brightness.dark,
-          primary: Colors.green.shade900,
+          primary: Colors.green.shade700,
           onPrimary: Colors.white,
           secondary: Colors.green.shade700,
           onSecondary: Colors.black54,
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           onError: Colors.white,
           background: Colors.grey.shade800,
           onBackground: Colors.white,
-          surface: Colors.blue,
+          surface: Colors.green,
           onSurface: Colors.white,
         ),
         appBarTheme: AppBarTheme(color: Colors.green.shade800),
