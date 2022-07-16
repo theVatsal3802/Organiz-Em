@@ -1,16 +1,14 @@
-# todo
+# Organiz'Em
 
-A new Flutter project.
+Most of us feel the need to organize our daily tasks. 
+Organiz'Em app is the easiest way to do so.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Download the Android APK from the following link:
+  1) If you have a x64 Device (Most devices today and using Android Nouget or higher)
+     [x64 bit Release](https://drive.google.com/file/d/1mNvAP6mnwwB3T4FDl-iPjib7bzhgxQwE/view?usp=sharing)
+  2) If you have a x32 Device (Most devices today and using Android Marshmallow or lower)
+     [x32 bit Release](https://drive.google.com/file/d/11ph4onXFF2GyuWlckYh2r6TZpduwEOZZ/view?usp=sharing)
+  3) If you have a x86 Device (Rarely found)
+     [x86 Release](https://drive.google.com/file/d/1hEsRJT6AZSeBDttvnEgNCv6zP2IPeGL2/view?usp=sharing)
+     
+Just Sign up with your Email id, password and username and start using the app. 
