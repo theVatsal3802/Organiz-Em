@@ -12,7 +12,3 @@ Download the Android APK from the following link:
      [x86 Release](https://drive.google.com/file/d/1sVgfihyDE3WwV42CIQ_t5x2GfVq_XriN/view?usp=sharing)
      
 Just Sign up with your Email id, password and username and start using the app. 
-
-## Screenshots
-![Authentication Screen](https://drive.google.com/file/d/1pZhIILUfJOIouQK5epXXi4AQvu-pkkse/view?usp=sharing "Authentication Screen")
-![Home Screen](https://drive.google.com/file/d/1pWaXjHfAkNjDaUx1tZtPDzPUcHl37jrJ/view?usp=sharing "Home Screen")
