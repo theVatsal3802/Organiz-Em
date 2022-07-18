@@ -5,5 +5,6 @@ Organiz'Em app is the easiest way to do so.
 
 Download the Android APK from the following link:
      [Download Organiz'Em App for Android](https://drive.google.com/drive/folders/1qx_2gXYSYPgwFaFfzPeYrr5tJuKA0vJq?usp=sharing)
+(Also Check spam folder for Emails and mark them as not spam)
      
 Just Sign up with your Email id, password and username and start using the app. 
