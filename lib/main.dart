@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-import './screens/bottom_nav_screen.dart';
 import 'screens/auth_screen.dart';
 import './screens/add_task_screen.dart';
 import './screens/description_screen.dart';
+import './screens/verify_email_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return const BottomNavScreen();
+            return const VerifyEmailScreen();
           }
           return const AuthScreen();
         },

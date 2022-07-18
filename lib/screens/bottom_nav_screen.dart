@@ -55,7 +55,10 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Organiz'Em"),
+        title: const Text(
+          "Organiz'Em",
+          textScaleFactor: 1,
+        ),
         actions: [
           IconButton(
             onPressed: () async {

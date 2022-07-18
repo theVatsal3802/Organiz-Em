@@ -8,6 +8,7 @@ import '../helpers/custom_list_view.dart';
 import '../helpers/empty_list_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
+  static const routeName = "/home";
   const HomeScreen({Key? key}) : super(key: key);
 
   @override

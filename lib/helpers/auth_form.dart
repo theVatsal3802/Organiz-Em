@@ -54,7 +54,10 @@ class _AuthFormState extends State<AuthForm> {
       }
     } catch (error) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: const Text("An Error Occurred! Please try again."),
+        content: const Text(
+          "An Error Occurred! Please try again.",
+          textScaleFactor: 1,
+        ),
         action: SnackBarAction(
             label: "OK",
             onPressed: () {
@@ -99,6 +102,7 @@ class _AuthFormState extends State<AuthForm> {
                   ),
                   Text(
                     "Organiz'Em",
+                    textScaleFactor: 1,
                     style: TextStyle(
                       fontSize: Theme.of(context).textTheme.headline2!.fontSize,
                       color: Theme.of(context).colorScheme.primary,
@@ -192,7 +196,10 @@ class _AuthFormState extends State<AuthForm> {
                   if (!_isLoading)
                     ElevatedButton(
                       onPressed: startAuthentication,
-                      child: Text(isLogin ? "Login" : "SignUp"),
+                      child: Text(
+                        isLogin ? "Login" : "SignUp",
+                        textScaleFactor: 1,
+                      ),
                     ),
                   if (!_isLoading)
                     const SizedBox(
@@ -207,6 +214,7 @@ class _AuthFormState extends State<AuthForm> {
                       },
                       child: Text(
                         isLogin ? "SignUp Instead" : "Login Instead",
+                        textScaleFactor: 1,
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.onPrimary,
                         ),

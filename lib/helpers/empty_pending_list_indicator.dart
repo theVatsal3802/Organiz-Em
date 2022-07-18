@@ -22,6 +22,7 @@ class EmptyPendingListIndicator extends StatelessWidget {
           Center(
             child: Text(
               "Hurray!! No Pending Tasks!",
+              textScaleFactor: 1,
               style: Theme.of(context).textTheme.headline5,
             ),
           ),

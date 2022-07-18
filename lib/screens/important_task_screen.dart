@@ -7,6 +7,7 @@ import '../helpers/custom_list_view.dart';
 import '../helpers/empty_list_indicator.dart';
 
 class ImportantTaskScreen extends StatefulWidget {
+  static const routeName = "/important";
   const ImportantTaskScreen({Key? key}) : super(key: key);
 
   @override

@@ -7,6 +7,7 @@ import '../helpers/custom_list_view.dart';
 import '../helpers/empty_pending_list_indicator.dart';
 
 class PendingTaskScreen extends StatefulWidget {
+  static const routeName = "/pending";
   const PendingTaskScreen({Key? key}) : super(key: key);
 
   @override

@@ -41,7 +41,10 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
           final dynamic task = docs.isEmpty ? [] : docs[data["index"]];
           return Scaffold(
             appBar: AppBar(
-              title: Text(task["title"]),
+              title: Text(
+                task["title"],
+                textScaleFactor: 1,
+              ),
             ),
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,6 +93,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                       task["isComplete"]
                           ? "Mark Not Complete"
                           : "Mark Complete",
+                      textScaleFactor: 1,
                     ),
                   ),
                 ),

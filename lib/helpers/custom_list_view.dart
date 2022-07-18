@@ -20,6 +20,7 @@ class CustomListView extends StatefulWidget {
 class _CustomListViewState extends State<CustomListView> {
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     String tasks = dotenv.get("TASKS_COLLECTION", fallback: "");
     String myTask = dotenv.get("SUB_TASKS_COLLECTION", fallback: "");
     return ListView.builder(
@@ -52,7 +53,7 @@ class _CustomListViewState extends State<CustomListView> {
             }
           },
           child: Container(
-            height: 80,
+            height: height * 0.11,
             width: double.infinity,
             padding: const EdgeInsets.all(5),
             margin: const EdgeInsets.all(3),
@@ -90,12 +91,14 @@ class _CustomListViewState extends State<CustomListView> {
                   ),
                   Expanded(
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           widget.docs[index]["title"],
-                          overflow: TextOverflow.fade,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          textScaleFactor: 1,
                           style: TextStyle(
                             fontSize:
                                 Theme.of(context).textTheme.headline6!.fontSize,
@@ -108,35 +111,41 @@ class _CustomListViewState extends State<CustomListView> {
                               : widget.docs[index]["description"],
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
+                          textScaleFactor: 1,
                         ),
-                        Text(
-                          widget.docs[index]["dueDate"].isEmpty
-                              ? ""
-                              : "Due Date: ${widget.docs[index]["dueDate"]}",
-                          overflow: TextOverflow.fade,
-                          style: const TextStyle(
-                            color: Colors.red,
+                        if (!widget.docs[index]["dueDate"].isEmpty)
+                          Row(
+                            children: [
+                              const Icon(
+                                Icons.notifications,
+                                color: Colors.red,
+                              ),
+                              Text(
+                                widget.docs[index]["dueDate"],
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 1,
+                                textScaleFactor: 1,
+                                style: const TextStyle(
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
                       ],
                     ),
                   ),
+                  const VerticalDivider(),
                   Expanded(
-                    child: Column(
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        const Icon(Icons.calendar_month),
                         Text(
-                          "Added at: ${widget.docs[index]["time"]}",
-                          overflow: TextOverflow.fade,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Text(
-                          "Added on: ${widget.docs[index]["date"]}",
-                          overflow: TextOverflow.fade,
+                          widget.docs[index]["date"],
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          textScaleFactor: 1,
                           style: const TextStyle(color: Colors.grey),
                         ),
                       ],
@@ -150,8 +159,8 @@ class _CustomListViewState extends State<CustomListView> {
                     },
                     icon: Icon(
                       widget.docs[index]["isImportant"] == true
-                          ? Icons.check_box
-                          : Icons.square_outlined,
+                          ? Icons.star
+                          : Icons.star_border,
                     ),
                   ),
                 ],

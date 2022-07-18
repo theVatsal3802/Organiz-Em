@@ -17,6 +17,7 @@ class ContentText extends StatelessWidget {
       ),
       child: Text(
         content,
+        textScaleFactor: 1,
         softWrap: true,
         style: const TextStyle(
           fontSize: 18,

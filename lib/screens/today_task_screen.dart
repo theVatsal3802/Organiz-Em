@@ -8,6 +8,7 @@ import '../helpers/date_helper.dart';
 import '../helpers/empty_pending_list_indicator.dart';
 
 class TodayTaskScreen extends StatefulWidget {
+  static const routeName = "/today";
   const TodayTaskScreen({Key? key}) : super(key: key);
 
   @override

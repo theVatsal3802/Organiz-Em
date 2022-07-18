@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import '../helpers/date_helper.dart';
+import './bottom_nav_screen.dart';
 
 class AddTaskScreen extends StatefulWidget {
   static const routeName = "/add-task";
@@ -41,7 +42,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
     if (titleController.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: const Text("Please add a task first"),
+          content: const Text(
+            "Please add a task first",
+            textScaleFactor: 1,
+          ),
           action: SnackBarAction(
             label: "OK",
             onPressed: () {
@@ -79,30 +83,32 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         "isImportant": isImportant,
         "isComplete": false,
       },
-    ).then((_) {
-      setState(() {
-        _isLoading = false;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text("Added Task"),
-          duration: const Duration(seconds: 3),
-          action: SnackBarAction(
-              label: "OK",
-              onPressed: () {
-                ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                Navigator.of(context).pop();
-              }),
-        ),
-      );
-    });
+    ).then(
+      (_) {
+        setState(() {
+          titleController.text = "";
+          descController.text = "";
+          isImportant = false;
+          dueDate = "";
+          _isLoading = false;
+        });
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (ctx) => const BottomNavScreen(),
+          ),
+        );
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add New Task"),
+        title: const Text(
+          "Add New Task",
+          textScaleFactor: 1,
+        ),
       ),
       body: Container(
         padding: const EdgeInsets.all(20),
@@ -135,11 +141,12 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 textCapitalization: TextCapitalization.sentences,
                 controller: descController,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
-                      borderSide: const BorderSide(),
-                    ),
-                    labelText: "Description"),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: const BorderSide(),
+                  ),
+                  labelText: "Description",
+                ),
               ),
             ),
             const SizedBox(
@@ -157,6 +164,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     children: [
                       const Text(
                         "Add Due Date",
+                        textScaleFactor: 1,
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -164,6 +172,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       if (dueDate.isNotEmpty)
                         Text(
                           "Selected Due Date: $dueDate",
+                          textScaleFactor: 1,
                           style: Theme.of(context).textTheme.bodyText2,
                         ),
                     ],
@@ -177,7 +186,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             ),
             CheckboxListTile(
               activeColor: Theme.of(context).colorScheme.primary,
-              title: const Text("Mark as Important"),
+              title: const Text(
+                "Mark as Important",
+                textScaleFactor: 1,
+              ),
               value: isImportant,
               onChanged: (newValue) {
                 setState(() {
@@ -192,7 +204,10 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             if (!_isLoading)
               ElevatedButton(
                 onPressed: addtask,
-                child: const Text("Add Task"),
+                child: const Text(
+                  "Add Task",
+                  textScaleFactor: 1,
+                ),
               ),
           ],
         ),

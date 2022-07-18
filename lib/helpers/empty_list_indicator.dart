@@ -21,6 +21,7 @@ class EmptyListIndicator extends StatelessWidget {
           Center(
             child: Text(
               text,
+              textScaleFactor: 1,
               style: Theme.of(context).textTheme.headline5,
             ),
           ),
@@ -33,7 +34,10 @@ class EmptyListIndicator extends StatelessWidget {
                 Navigator.of(context).pushNamed(navigationRoute!);
               },
               icon: const Icon(Icons.edit),
-              label: const Text("Add Task"),
+              label: const Text(
+                "Add Task",
+                textScaleFactor: 1,
+              ),
             ),
         ],
       ),

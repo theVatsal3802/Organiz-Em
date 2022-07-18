@@ -7,6 +7,7 @@ import '../helpers/custom_list_view.dart';
 import '../helpers/empty_list_indicator.dart';
 
 class CompletedTaskScreen extends StatefulWidget {
+  static const routeName = "/completed";
   const CompletedTaskScreen({Key? key}) : super(key: key);
 
   @override

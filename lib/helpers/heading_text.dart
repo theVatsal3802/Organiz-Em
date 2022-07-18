@@ -17,6 +17,7 @@ class HeadingText extends StatelessWidget {
       ),
       child: Text(
         heading,
+        textScaleFactor: 1,
         softWrap: true,
         style: TextStyle(
           fontSize: Theme.of(context).textTheme.headline5!.fontSize,
