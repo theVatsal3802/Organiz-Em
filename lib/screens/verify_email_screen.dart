@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
 import '../screens/bottom_nav_screen.dart';
 
 class VerifyEmailScreen extends StatefulWidget {
@@ -59,15 +60,24 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
         canResendEmail = true;
       });
     } catch (e) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          duration: const Duration(
-            seconds: 3,
-          ),
-          content: Text(
-            e.toString(),
-          ),
+      AlertDialog(
+        title: const Text(
+          "The following orror occurred! Please try again.",
+          textScaler: TextScaler.noScaling,
         ),
+        content: Text(
+          e.toString(),
+          textScaler: TextScaler.noScaling,
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              "OK",
+              textScaler: TextScaler.noScaling,
+            ),
+          ),
+        ],
       );
     }
   }
@@ -81,41 +91,46 @@ class _VerifyEmailScreenState extends State<VerifyEmailScreen> {
               "Verify Email",
             ),
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "A Verification Email has been sent to your provided email address",
-                  textScaleFactor: 1,
-                  style: Theme.of(context).textTheme.headline6,
-                  softWrap: true,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                ElevatedButton(
-                  onPressed: canResendEmail ? sendVerificationEmail : null,
-                  child: const Text(
-                    "Resend Email",
-                    textScaleFactor: 1,
+          body: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "A Verification Email has been sent to your provided email address",
+                    textScaler: TextScaler.noScaling,
+                    style: Theme.of(context).textTheme.titleLarge,
+                    softWrap: true,
+                    textAlign: TextAlign.center,
                   ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextButton(
-                  onPressed: () {
-                    FirebaseAuth.instance.signOut();
-                  },
-                  child: const Text(
-                    "Change Email Id",
-                    textScaleFactor: 1,
+                  const SizedBox(
+                    height: 10,
                   ),
-                ),
-              ],
+                  ElevatedButton(
+                    onPressed: canResendEmail ? sendVerificationEmail : null,
+                    child: Text(
+                      "Resend Email",
+                      textScaler: TextScaler.noScaling,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut();
+                    },
+                    child: const Text(
+                      "Change Email Id",
+                      textScaler: TextScaler.noScaling,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

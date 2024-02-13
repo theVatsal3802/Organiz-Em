@@ -17,10 +17,10 @@ class HeadingText extends StatelessWidget {
       ),
       child: Text(
         heading,
-        textScaleFactor: 1,
+        textScaler: TextScaler.noScaling,
         softWrap: true,
         style: TextStyle(
-          fontSize: Theme.of(context).textTheme.headline5!.fontSize,
+          fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize,
           color: Theme.of(context).colorScheme.secondary,
         ),
       ),

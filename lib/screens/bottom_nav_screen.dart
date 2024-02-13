@@ -1,11 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
+import './add_task_screen.dart';
 import './completed_task_screen.dart';
 import './home_screen.dart';
-import './add_task_screen.dart';
-import './pending_task_screen.dart';
 import './important_task_screen.dart';
+import './pending_task_screen.dart';
 import './today_task_screen.dart';
 
 class BottomNavScreen extends StatefulWidget {
@@ -57,7 +57,7 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       appBar: AppBar(
         title: const Text(
           "Organiz'Em",
-          textScaleFactor: 1,
+          textScaler: TextScaler.noScaling,
         ),
         actions: [
           IconButton(

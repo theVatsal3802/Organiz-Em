@@ -43,7 +43,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
             appBar: AppBar(
               title: Text(
                 task["title"],
-                textScaleFactor: 1,
+                textScaler: TextScaler.noScaling,
               ),
             ),
             body: Column(
@@ -93,7 +93,7 @@ class _DescriptionScreenState extends State<DescriptionScreen> {
                       task["isComplete"]
                           ? "Mark Not Complete"
                           : "Mark Complete",
-                      textScaleFactor: 1,
+                      textScaler: TextScaler.noScaling,
                     ),
                   ),
                 ),

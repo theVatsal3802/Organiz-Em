@@ -98,10 +98,12 @@ class _CustomListViewState extends State<CustomListView> {
                           widget.docs[index]["title"],
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
-                          textScaleFactor: 1,
+                          textScaler: TextScaler.noScaling,
                           style: TextStyle(
-                            fontSize:
-                                Theme.of(context).textTheme.headline6!.fontSize,
+                            fontSize: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .fontSize,
                             color: Colors.green,
                           ),
                         ),
@@ -111,7 +113,7 @@ class _CustomListViewState extends State<CustomListView> {
                               : widget.docs[index]["description"],
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
-                          textScaleFactor: 1,
+                          textScaler: TextScaler.noScaling,
                         ),
                         if (!widget.docs[index]["dueDate"].isEmpty)
                           Row(
@@ -124,7 +126,7 @@ class _CustomListViewState extends State<CustomListView> {
                                 widget.docs[index]["dueDate"],
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 1,
-                                textScaleFactor: 1,
+                                textScaler: TextScaler.noScaling,
                                 style: const TextStyle(
                                   color: Colors.red,
                                 ),
@@ -145,7 +147,7 @@ class _CustomListViewState extends State<CustomListView> {
                           widget.docs[index]["date"],
                           overflow: TextOverflow.ellipsis,
                           maxLines: 1,
-                          textScaleFactor: 1,
+                          textScaler: TextScaler.noScaling,
                           style: const TextStyle(color: Colors.grey),
                         ),
                       ],

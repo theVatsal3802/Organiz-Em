@@ -53,17 +53,21 @@ class _AuthFormState extends State<AuthForm> {
         });
       }
     } catch (error) {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      AlertDialog(
         content: const Text(
           "An Error Occurred! Please try again.",
-          textScaleFactor: 1,
+          textScaler: TextScaler.noScaling,
         ),
-        action: SnackBarAction(
-            label: "OK",
-            onPressed: () {
-              ScaffoldMessenger.of(context).hideCurrentSnackBar();
-            }),
-      ));
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              "OK",
+              textScaler: TextScaler.noScaling,
+            ),
+          ),
+        ],
+      );
     } finally {
       setState(() {
         _isLoading = false;
@@ -102,9 +106,10 @@ class _AuthFormState extends State<AuthForm> {
                   ),
                   Text(
                     "Organiz'Em",
-                    textScaleFactor: 1,
+                    textScaler: TextScaler.noScaling,
                     style: TextStyle(
-                      fontSize: Theme.of(context).textTheme.headline2!.fontSize,
+                      fontSize:
+                          Theme.of(context).textTheme.displayMedium!.fontSize,
                       color: Theme.of(context).colorScheme.primary,
                       fontWeight: FontWeight.bold,
                     ),
@@ -198,7 +203,10 @@ class _AuthFormState extends State<AuthForm> {
                       onPressed: startAuthentication,
                       child: Text(
                         isLogin ? "Login" : "SignUp",
-                        textScaleFactor: 1,
+                        textScaler: TextScaler.noScaling,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onPrimary,
+                        ),
                       ),
                     ),
                   if (!_isLoading)
@@ -214,7 +222,7 @@ class _AuthFormState extends State<AuthForm> {
                       },
                       child: Text(
                         isLogin ? "SignUp Instead" : "Login Instead",
-                        textScaleFactor: 1,
+                        textScaler: TextScaler.noScaling,
                         style: TextStyle(
                           color: Theme.of(context).colorScheme.onPrimary,
                         ),

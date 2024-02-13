@@ -44,7 +44,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
         SnackBar(
           content: const Text(
             "Please add a task first",
-            textScaleFactor: 1,
+            textScaler: TextScaler.noScaling,
           ),
           action: SnackBarAction(
             label: "OK",
@@ -107,7 +107,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       appBar: AppBar(
         title: const Text(
           "Add New Task",
-          textScaleFactor: 1,
+          textScaler: TextScaler.noScaling,
         ),
       ),
       body: Container(
@@ -164,7 +164,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     children: [
                       const Text(
                         "Add Due Date",
-                        textScaleFactor: 1,
+                        textScaler: TextScaler.noScaling,
                         style: TextStyle(
                           fontSize: 16,
                         ),
@@ -172,8 +172,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                       if (dueDate.isNotEmpty)
                         Text(
                           "Selected Due Date: $dueDate",
-                          textScaleFactor: 1,
-                          style: Theme.of(context).textTheme.bodyText2,
+                          textScaler: TextScaler.noScaling,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                     ],
                   ),
@@ -188,7 +188,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
               activeColor: Theme.of(context).colorScheme.primary,
               title: const Text(
                 "Mark as Important",
-                textScaleFactor: 1,
+                textScaler: TextScaler.noScaling,
               ),
               value: isImportant,
               onChanged: (newValue) {
@@ -204,9 +204,12 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             if (!_isLoading)
               ElevatedButton(
                 onPressed: addtask,
-                child: const Text(
+                child: Text(
                   "Add Task",
-                  textScaleFactor: 1,
+                  textScaler: TextScaler.noScaling,
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onPrimary,
+                  ),
                 ),
               ),
           ],
